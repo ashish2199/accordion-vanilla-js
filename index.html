@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordian</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>
+      Accordions are useful when you want to toggle between hiding and showing
+      large amount of content.
+    </h1>
+    <div class="accordian-container">
+      <div class="accordian">
+        <div class="accordian-header">
+          <div class="accordian-title">
+            Accordian 1
+          </div>
+          <div class="accordian-icon">
+            <!-- ▲▼ -->
+            <button data-closed="closed" class="accordian-control-btn">
+              ▼
+            </button>
+          </div>
+        </div>
+        <div
+          data-accordian-id="0"
+          data-visiblity="hidden"
+          class="accordian-pane"
+        >
+          I have to maintain a large number of classic ASP pages, many of which
+          have tabular data with no sort capabilities at all. Whatever order the
+          original developer used in the database query is what you're stuck
+          with. I want to to tack on some basic sorting to a bunch of these
+          pages, and I'm doing it all client side with javascript. I already
+          have the basic script done to sort a given table on a given column in
+          a given direction, and it works well as long as the table is limited
+          by certain conventions we follow here. What I want to do for the UI is
+          just indicate sort direction with the caret character ( ^ ) and ...
+          what? Is there a special character that is the direct opposite of a
+          caret? The letter v won't quite cut it. Alternatively, is there
+          another character pairing I can use?
+        </div>
+      </div>
+
+      <div class="accordian">
+        <div class="accordian-header">
+          <div class="accordian-title">
+            Accordian 2
+          </div>
+          <div class="accordian-icon">
+            <!-- ▲▼ -->
+            <button data-closed="closed" class="accordian-control-btn">
+              ▼
+            </button>
+          </div>
+        </div>
+        <div
+          data-accordian-id="1"
+          data-visiblity="hidden"
+          class="accordian-pane"
+        >
+          I have to maintain a large number of classic ASP pages, many of which
+          have tabular data with no sort capabilities at all. Whatever order the
+          original developer used in the database query is what you're stuck
+          with. I want to to tack on some basic sorting to a bunch of these
+          pages, and I'm doing it all client side with javascript. I already
+          have the basic script done to sort a given table on a given column in
+          a given direction, and it works well as long as the table is limited
+          by certain conventions we follow here. What I want to do for the UI is
+          just indicate sort direction with the caret character ( ^ ) and ...
+          what? Is there a special character that is the direct opposite of a
+          caret? The letter v won't quite cut it. Alternatively, is there
+          another character pairing I can use?
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
