@@ -1,15 +1,16 @@
 .accordian {
-  border: 1px solid black;
 }
 .accordian-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px solid black;
+  border: 1px solid black;
   background-color: rgba(65, 129, 182, 0.5);
   padding: 5px;
 }
 .accordian-pane {
+  border: 1px solid black;
   background-color: rgb(156, 211, 228);
   padding: 5px;
+  margin: -1px 0px -1px 0px;
 }

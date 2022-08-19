@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function init() {
-  let btns = document.querySelectorAll(".accordian-control-btn");
+  let btns = document.querySelectorAll(".accordian-header");
   let btnsArr = [...btns];
   btnsArr.forEach((btn, index) => {
     btn.addEventListener(
