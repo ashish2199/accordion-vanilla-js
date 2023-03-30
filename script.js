@@ -1,18 +1,24 @@
+const ICON_OPEN = "▲";
+const ICON_CLOSED = "▼";
+
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOMContentLoaded fired");
   init();
 });
 
 function init() {
-  let btns = document.querySelectorAll(".accordian-header");
-  let btnsArr = [...btns];
-  btnsArr.forEach((btn, index) => {
-    btn.addEventListener(
+  let accordianHeaders = document.querySelectorAll(".accordian-header");
+  [...accordianHeaders].forEach((header, index) => {
+    header.addEventListener(
       "click",
-      accordianButtonClickHandler.bind(this, index)
+      accordianHeaderClickHandler.bind(this, index)
     );
   });
 
+  hidePanels();
+}
+
+function hidePanels() {
   let accordians = document.querySelectorAll(".accordian-pane");
   let accordiansArr = [...accordians];
   accordiansArr.forEach((accordian, index) => {
@@ -20,26 +26,33 @@ function init() {
   });
 }
 
-const ICON_OPEN = "▲";
-const ICON_CLOSED = "▼";
-
-function accordianButtonClickHandler(id, evt) {
+function accordianHeaderClickHandler(id, evt) {
   const btn = evt.target;
-  toggleBtn(btn);
-  toggleAccordian(id);
-  console.log("Clicked:", id, btn.dataset.closed);
+  console.log("Clicked on ", id, btn);
+  const { accordianPanel, button } = getAccordianById(id);
+  toggleAccordianPanel(accordianPanel);
+  toggleBtn(button);
 }
 
-function toggleAccordian(id) {
-  let accordian = document.querySelector(
+function getAccordianById(id) {
+  let accordianPanel = document.querySelector(
     `div.accordian-pane[data-accordian-id="${id}"]`
   );
-  const state = accordian.dataset.visiblity;
+  let accordian = accordianPanel.parentElement;
+  let button = accordian.querySelector("button.accordian-control-btn");
 
-  if (state === "visible") {
+  return {
+    accordianPanel,
+    button
+  };
+}
+
+function toggleAccordianPanel(accordian) {
+  const accordianState = accordian.dataset.visiblity;
+  if (accordianState === "visible") {
     accordian.dataset.visiblity = "hidden";
     accordian.style.display = "none";
-  } else if (state === "hidden") {
+  } else if (accordianState === "hidden") {
     accordian.dataset.visiblity = "visible";
     accordian.style.display = "block";
   }
